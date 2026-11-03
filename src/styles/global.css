@@ -3189,3 +3189,21 @@ section{padding:95px 0}.intro-grid{display:grid;grid-template-columns:1fr 1fr;ga
   }
 
 }
+
+
+/* =========================================================
+   HEADER NAV - RIGHT ALIGNMENT
+   ========================================================= */
+
+@media (min-width: 821px) {
+
+  .site-header .header-inner {
+    justify-content: flex-start;
+  }
+
+  .site-header #nav {
+    margin-left: auto;
+    justify-content: flex-end;
+  }
+
+}
