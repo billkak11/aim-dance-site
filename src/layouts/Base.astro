@@ -2,66 +2,372 @@
 import '../styles/global.css';
 import banner from '../data/banner.json';
 import site from '../data/locations.json';
-const { title = 'Art In Motion Dance Center', description = 'Technique-focused competitive and recreational dance in Melville and Commack, NY.' } = Astro.props;
+
+const {
+  title = 'Art In Motion Dance Center',
+  description = 'Technique-focused competitive and recreational dance in Melville and Commack, NY.'
+} = Astro.props;
+
 const path = Astro.url.pathname;
+
 const nav = [
-  ['/about-us','About'], ['/programs','Programs'], ['/competition-team','Competition Team'], ['/staff','Staff'],
-  ['/schedules','Schedules'], ['/calendar','Calendar'], ['/events','Events'], ['/contact','Contact']
+  ['/about-us','About'],
+  ['/programs','Programs'],
+  ['/competition-team','Competition Team'],
+  ['/staff','Staff'],
+  ['/schedules','Schedules'],
+  ['/calendar','Calendar'],
+  ['/events','Events'],
+  ['/contact','Contact']
 ];
 ---
+
 <!doctype html>
 <html lang="en">
+
 <head>
+
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content={description} />
-  <meta name="theme-color" content="#800020" />
-  <link rel="icon" type="image/png" href="/favicon.png" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  />
+
+  <meta
+    name="description"
+    content={description}
+  />
+
+  <meta
+    name="theme-color"
+    content="#800020"
+  />
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="/favicon.png"
+  />
+
   <title>{title}</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
 </head>
+
+
 <body>
-  {banner.show && <div class="banner" role="status">{banner.message}</div>}
+
+
+  {banner.show && (
+
+    <div
+      class="banner"
+      role="status"
+    >
+      {banner.message}
+    </div>
+
+  )}
+
+
+
+  <!-- =====================================================
+       TOP BAR
+       ===================================================== -->
+
   <div class="topbar">
+
     <div class="wrap topbar-inner">
+
+
       <div class="topbar-locations">
-        {site.locations.map((l) => <a href={`tel:${l.phone.replace(/\D/g, '')}`}><span>{l.name}</span> {l.phone}</a>)}
+
+        {site.locations.map((l) => (
+
+          <a href={`tel:${l.phone.replace(/\D/g, '')}`}>
+            <span>{l.name}</span> {l.phone}
+          </a>
+
+        ))}
+
       </div>
+
+
+
       <div class="portal-links">
-        {site.locations.map((l) => <a href={l.portal} target="_blank" rel="noopener">{l.name} Portal ↗</a>)}
+
+        {site.locations.map((l) => (
+
+          <a
+            href={l.portal}
+            target="_blank"
+            rel="noopener"
+          >
+            {l.name} Portal ↗
+          </a>
+
+        ))}
+
       </div>
+
+
     </div>
+
   </div>
+
+
+
+  <!-- =====================================================
+       HEADER
+       ===================================================== -->
+
   <header class="site-header">
+
     <div class="wrap header-inner">
-      <a class="brand" href="/" aria-label="Art In Motion Dance Center home">
-        <img class="brand-logo" src="/uploads/brand/aim-dance-logo.png" alt="Art In Motion Dance Center" />
+
+
+      <a
+        class="brand"
+        href="/"
+        aria-label="Art In Motion Dance Center home"
+      >
+
+        <img
+          class="brand-logo"
+          src="/uploads/brand/aim-dance-logo.png"
+          alt="Art In Motion Dance Center"
+        />
+
       </a>
-      <button class="menu-btn" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span><b>Menu</b></button>
-      <nav id="nav" aria-label="Main navigation">
-        {nav.map(([href,label]) => <a href={href} class={path === href || (href !== '/' && path.startsWith(href + '/')) ? 'active' : ''}>{label}</a>)}
-        <a class="nav-cta" href={site.locations[0].portal} target="_blank" rel="noopener">Register</a>
+
+
+
+      <button
+        class="menu-btn"
+        aria-expanded="false"
+        aria-controls="nav"
+      >
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+        <b>
+          Menu
+        </b>
+
+      </button>
+
+
+
+      <nav
+        id="nav"
+        aria-label="Main navigation"
+      >
+
+        {nav.map(([href,label]) => (
+
+          <a
+            href={href}
+            class={
+              path === href ||
+              (href !== '/' && path.startsWith(href + '/'))
+                ? 'active'
+                : ''
+            }
+          >
+            {label}
+          </a>
+
+        ))}
+
       </nav>
+
+
     </div>
+
   </header>
-  <main><slot /></main>
+
+
+
+  <main>
+    <slot />
+  </main>
+
+
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+
   <footer class="site-footer">
+
     <div class="wrap footer-grid">
+
+
       <div class="footer-brand">
-        <a class="brand light" href="/"><img class="brand-logo" src="/uploads/brand/aim-dance-logo.png" alt="Art In Motion Dance Center" /></a>
-        <p>Technique-focused competitive and recreational dance training for dancers across Long Island.</p>
-        <div class="socials"><a href={site.instagram}>Instagram</a><a href={site.facebook}>Facebook</a></div>
+
+        <a
+          class="brand light"
+          href="/"
+        >
+
+          <img
+            class="brand-logo"
+            src="/uploads/brand/aim-dance-logo.png"
+            alt="Art In Motion Dance Center"
+          />
+
+        </a>
+
+
+        <p>
+          Technique-focused competitive and recreational dance
+          training for dancers across Long Island.
+        </p>
+
+
+        <div class="socials">
+
+          <a href={site.instagram}>
+            Instagram
+          </a>
+
+          <a href={site.facebook}>
+            Facebook
+          </a>
+
+        </div>
+
       </div>
-      {site.locations.map((l) => <div><p class="footer-kicker">{l.name} studio</p><p>{l.address}</p><p><a href={`tel:${l.phone.replace(/\D/g, '')}`}>{l.phone}</a></p><a class="footer-link" href={l.portal}>Parent portal ↗</a></div>)}
-      <div><p class="footer-kicker">Explore</p><a class="footer-link" href="/programs">Programs</a><a class="footer-link" href="/staff">Faculty</a><a class="footer-link" href="/schedules">Schedules</a><a class="footer-link" href="/contact">Contact</a></div>
+
+
+
+      {site.locations.map((l) => (
+
+        <div>
+
+          <p class="footer-kicker">
+            {l.name} studio
+          </p>
+
+          <p>
+            {l.address}
+          </p>
+
+          <p>
+
+            <a href={`tel:${l.phone.replace(/\D/g, '')}`}>
+              {l.phone}
+            </a>
+
+          </p>
+
+          <a
+            class="footer-link"
+            href={l.portal}
+          >
+            Parent portal ↗
+          </a>
+
+        </div>
+
+      ))}
+
+
+
+      <div>
+
+        <p class="footer-kicker">
+          Explore
+        </p>
+
+        <a
+          class="footer-link"
+          href="/programs"
+        >
+          Programs
+        </a>
+
+        <a
+          class="footer-link"
+          href="/staff"
+        >
+          Faculty
+        </a>
+
+        <a
+          class="footer-link"
+          href="/schedules"
+        >
+          Schedules
+        </a>
+
+        <a
+          class="footer-link"
+          href="/contact"
+        >
+          Contact
+        </a>
+
+      </div>
+
+
     </div>
-    <div class="wrap footer-bottom"><span>© {new Date().getFullYear()} Art In Motion Dance Center</span><span>Melville · Commack · Long Island, NY</span></div>
+
+
+
+    <div class="wrap footer-bottom">
+
+      <span>
+        © {new Date().getFullYear()} Art In Motion Dance Center
+      </span>
+
+      <span>
+        Melville · Commack · Long Island, NY
+      </span>
+
+    </div>
+
   </footer>
+
+
+
   <script is:inline>
-    const btn = document.querySelector('.menu-btn'); const nav = document.getElementById('nav');
-    btn?.addEventListener('click', () => { const open = nav.classList.toggle('open'); btn.setAttribute('aria-expanded', String(open)); });
+
+    const btn = document.querySelector('.menu-btn');
+    const nav = document.getElementById('nav');
+
+    btn?.addEventListener('click', () => {
+
+      const open = nav.classList.toggle('open');
+
+      btn.setAttribute(
+        'aria-expanded',
+        String(open)
+      );
+
+    });
+
   </script>
+
+
 </body>
+
 </html>
