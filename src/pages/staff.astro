@@ -1,3 +1,8 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+
 /* =========================================================
    STAFF DATA
    ========================================================= */
@@ -9,6 +14,7 @@ const priorityIds = [
   'lisa-santapaola',
   'athena-castiglione'
 ];
+
 
 const priorityOrder = new Map(
   priorityIds.map((id, index) => [id, index])
@@ -22,13 +28,406 @@ const staff = (await getCollection('staff'))
     const aPriority = priorityOrder.get(a.id);
     const bPriority = priorityOrder.get(b.id);
 
-    if (aPriority !== undefined && bPriority !== undefined) {
+
+    if (
+      aPriority !== undefined &&
+      bPriority !== undefined
+    ) {
       return aPriority - bPriority;
     }
 
-    if (aPriority !== undefined) return -1;
-    if (bPriority !== undefined) return 1;
+
+    if (aPriority !== undefined) {
+      return -1;
+    }
+
+
+    if (bPriority !== undefined) {
+      return 1;
+    }
+
 
     return a.data.order - b.data.order;
 
   });
+
+
+const initials = (name) =>
+  name
+    .split(' ')
+    .map((part) => part[0])
+    .slice(0, 2)
+    .join('');
+
+
+
+/* =========================================================
+   TEACHER TRAINING IMAGES
+   ========================================================= */
+
+const teacherTrainingImages = [
+
+  {
+    image: '/uploads/staff/siobhan-santapaola.jpg',
+    alt: 'Siobhan Santapaola'
+  },
+
+  {
+    image: '/uploads/staff/ali-ribellino2.jpeg',
+    alt: 'Ali Ribellino'
+  },
+
+  {
+    image: '/uploads/drive/teacher-training/training-1.JPG',
+    alt: 'AIM faculty continuing their professional teacher training'
+  },
+
+  {
+    image: '/uploads/drive/teacher-training/training-2.jpg',
+    alt: 'Art In Motion faculty professional development'
+  },
+
+  {
+    image: '/uploads/drive/teacher-training/training-3.jpg',
+    alt: 'AIM teachers participating in continuing education'
+  },
+
+  {
+    image: '/uploads/drive/teacher-training/training-4.png',
+    alt: 'AIM faculty teacher training and development'
+  }
+
+];
+---
+
+<Base
+  title="Our Staff | AIM Dance"
+  description="Meet the educators, choreographers and studio leaders behind Art In Motion Dance Center in Melville and Commack."
+>
+
+
+  <!-- =====================================================
+       STAFF HERO
+       ===================================================== -->
+
+  <section class="staff-hero">
+
+    <div class="wrap staff-hero-grid">
+
+
+      <div>
+
+        <div class="eyebrow light">
+          The people behind AIM
+        </div>
+
+
+        <h1>
+          Meet the team that moves AIM forward.
+        </h1>
+
+
+        <p>
+          Experienced educators, choreographers and mentors who help
+          every dancer build technique, confidence and a lifelong
+          love of movement.
+        </p>
+
+      </div>
+
+
+
+      <div
+        class="staff-hero-stat"
+        aria-label={`${staff.length} team members`}
+      >
+
+        <strong>
+          {staff.length}
+        </strong>
+
+        <span>
+          faculty &amp; team members
+        </span>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       STAFF INTRODUCTION
+       ===================================================== -->
+
+  <section class="staff-intro">
+
+    <div class="wrap staff-intro-grid">
+
+
+      <div>
+
+        <div class="eyebrow">
+          Faculty &amp; studio team
+        </div>
+
+
+        <h2>
+          Professional guidance. Personal attention.
+        </h2>
+
+      </div>
+
+
+
+      <p>
+        Art In Motion brings together working professionals,
+        experienced teachers and dedicated studio leaders across
+        both Melville and Commack. Explore the team below and
+        open any profile to learn more.
+      </p>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       FACULTY
+       ===================================================== -->
+
+  <section class="staff-group">
+
+    <div class="wrap">
+
+
+      <div class="staff-section-head">
+
+
+        <div>
+
+          <span>
+            Faculty
+          </span>
+
+
+          <h2>
+            Meet our dance educators
+          </h2>
+
+        </div>
+
+
+
+        <p>
+          {staff.length} teachers, choreographers and studio team
+          members currently listed on the AIM team.
+        </p>
+
+
+      </div>
+
+
+
+      <div class="staff-grid staff-grid-all">
+
+
+        {staff.map((s) => (
+
+          <a
+            class="staff-card"
+            href={`/team/${s.id}`}
+          >
+
+
+            <div class="staff-photo-wrap">
+
+
+              {s.data.photo ? (
+
+                <img
+                  src={s.data.photo}
+                  alt={s.data.name}
+                  loading="lazy"
+                />
+
+              ) : (
+
+                <div
+                  class="staff-ph"
+                  aria-hidden="true"
+                >
+                  {initials(s.data.name)}
+                </div>
+
+              )}
+
+
+
+              <span
+                class="staff-card-arrow"
+                aria-hidden="true"
+              >
+                ↗
+              </span>
+
+
+            </div>
+
+
+
+            <div class="staff-card-copy">
+
+              <p>
+                {s.data.role}
+              </p>
+
+
+              <h3>
+                {s.data.name}
+              </h3>
+
+
+              <span>
+                View profile
+              </span>
+
+            </div>
+
+
+          </a>
+
+        ))}
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       TEACHER TRAINING
+       ===================================================== -->
+
+  <section class="teacher-training-section">
+
+    <div class="wrap">
+
+
+      <div class="teacher-training-heading">
+
+
+        <div>
+
+          <div class="eyebrow">
+            Always learning
+          </div>
+
+
+          <h2>
+            Teachers who remain students.
+          </h2>
+
+        </div>
+
+
+
+        <p>
+          In addition to a wide variety of professional training
+          and experience, our teachers are forever students;
+          learning how to be the best teachers they can be!
+        </p>
+
+
+      </div>
+
+
+
+      <div class="teacher-training-grid">
+
+
+        {teacherTrainingImages.map((item, index) => (
+
+          <figure
+            class={`teacher-training-photo teacher-training-photo-${index + 1}`}
+          >
+
+            <img
+              src={item.image}
+              alt={item.alt}
+              loading="lazy"
+            />
+
+          </figure>
+
+        ))}
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       FINAL CTA
+       ===================================================== -->
+
+  <section class="staff-cta">
+
+    <div class="wrap staff-cta-inner">
+
+
+      <div>
+
+        <div class="eyebrow light">
+          Dance with AIM
+        </div>
+
+
+        <h2>
+          Find the right class for your dancer.
+        </h2>
+
+      </div>
+
+
+
+      <div class="actions">
+
+        <a
+          class="btn btn-light"
+          href="/schedules"
+        >
+          View schedules
+        </a>
+
+
+        <a
+          class="btn outline staff-cta-outline"
+          href="/contact"
+        >
+          Contact the studio
+        </a>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+</Base>
