@@ -36,3 +36,5 @@ Push the project to the GitHub repository connected to Cloudflare Pages/Workers 
 
 ## Media
 The original WordPress upload archive contained thousands of generated thumbnail variants. The rebuild carries the original AIM assets actually used by the new pages rather than copying every duplicate WordPress thumbnail into Git.
+
+Deployment refresh - November 4, 2026
