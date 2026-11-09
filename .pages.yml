@@ -179,12 +179,13 @@ content:
         label: Page Title
         type: string
         required: true
+        description: "Main heading shown on the Schedules page."
 
       - name: description
         label: Page Description
         type: text
         required: true
-        description: "Introductory text shown for the Schedules page."
+        description: "Introductory text shown underneath the Schedules heading."
 
       - name: section
         label: Page Section
@@ -192,13 +193,37 @@ content:
         readonly: true
         description: "System value. Please do not change."
 
-      - name: body
-        label: Schedule Content
-        type: rich-text
-        options:
-          format: markdown
-          media: true
-        description: "Update the current class schedule information here."
+      - name: schedules
+        label: Schedule Cards
+        type: object
+        required: true
+        list:
+          min: 1
+          collapsible:
+            collapsed: false
+            summary: "{title}"
+
+        fields:
+          - name: title
+            label: Schedule Title
+            type: string
+            required: true
+            description: "Example: Melville Recreational Schedule 2026–2027"
+
+          - name: image
+            label: Schedule Image
+            type: image
+            required: true
+            description: "Upload or select the current schedule image."
+
+          - name: location
+            label: Studio Location
+            type: select
+            required: true
+            options:
+              values:
+                - Melville
+                - Commack
 
 
   # ==============================
@@ -246,3 +271,4 @@ content:
         label: Calendar Image Alt Text
         type: string
         required: true
+        description: "Describe the calendar image for accessibility."
