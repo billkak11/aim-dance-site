@@ -1,16 +1,117 @@
 ---
 import Base from '../layouts/Base.astro';
 import site from '../data/locations.json';
-const schedules = [
-  ['Melville Recreational Schedule 2026–2027','/uploads/schedules/melville-rec.png',site.locations[0].portal],
-  ['Commack Recreational Schedule 2026–2027','/uploads/schedules/commack-rec.png',site.locations[1].portal],
-  ['Melville Company Schedule 2026–2027','/uploads/schedules/melville-company.png',site.locations[0].portal],
-  ['Commack Company Schedule 2026–2027','/uploads/schedules/commack-company.png',site.locations[1].portal]
-];
+import { getEntry } from 'astro:content';
+
+const page = await getEntry('pages', 'schedules');
+
+if (!page) {
+  throw new Error('Schedules content could not be found.');
+}
+
+const { title, description, schedules = [] } = page.data;
+
+const getPortal = (location) => {
+  if (location === 'Commack') {
+    return site.locations[1].portal;
+  }
+
+  return site.locations[0].portal;
+};
 ---
-<Base title="2026–2027 Schedules | AIM Dance">
-  <div class="subhero"><div class="wrap"><div class="eyebrow light">Current season</div><h1>Schedules</h1><p>2026–2027 recreational and company schedules for our Melville and Commack studios.</p></div></div>
-  <section class="content-section"><div class="wrap"><div class="schedule-grid">
-    {schedules.map(([title,img,portal])=><article class="schedule-card"><a href={img} target="_blank"><img src={img} alt={title} loading="lazy"/></a><div><h3>{title}</h3><p>Open the schedule image for a larger view or visit the parent portal for registration and account details.</p><a class="btn" href={portal}>Open parent portal ↗</a></div></article>)}
-  </div></div></section>
+
+<Base title={`2026–2027 ${title} | AIM Dance`}>
+
+  <!-- =====================================================
+       SCHEDULES HERO
+       ===================================================== -->
+
+  <div class="subhero">
+
+    <div class="wrap">
+
+      <div class="eyebrow light">
+        Current season
+      </div>
+
+      <h1>
+        {title}
+      </h1>
+
+      <p>
+        {description}
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       SCHEDULE CARDS
+       ===================================================== -->
+
+  <section class="content-section">
+
+    <div class="wrap">
+
+      <div class="schedule-grid">
+
+        {schedules.map((schedule) => {
+
+          const portal = getPortal(schedule.location);
+
+          return (
+
+            <article class="schedule-card">
+
+              <a
+                href={schedule.image}
+                target="_blank"
+                rel="noopener"
+              >
+
+                <img
+                  src={schedule.image}
+                  alt={schedule.title}
+                  loading="lazy"
+                />
+
+              </a>
+
+
+              <div>
+
+                <h3>
+                  {schedule.title}
+                </h3>
+
+                <p>
+                  Open the schedule image for a larger view or visit the
+                  parent portal for registration and account details.
+                </p>
+
+                <a
+                  class="btn"
+                  href={portal}
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Open parent portal ↗
+                </a>
+
+              </div>
+
+            </article>
+
+          );
+
+        })}
+
+      </div>
+
+    </div>
+
+  </section>
+
 </Base>
