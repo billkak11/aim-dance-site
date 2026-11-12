@@ -105,5 +105,40 @@
       "image": "/uploads/drive/kickline/kickline-1.jpg",
       "href": "/genres/jumps-turns/"
     }
-  ]
+  ],
+  "sections": {
+    "staff": {
+      "eyebrow": "Meet the faculty",
+      "headline": "Teachers who know how to bring out your best.",
+      "link_label": "Meet the full team →"
+    },
+    "experience": {
+      "eyebrow": "The AIM experience",
+      "headline_line1": "Strong technique.",
+      "headline_line2": "Real connection.",
+      "text": "Dancers grow through expert instruction, performance opportunities and a studio culture that feels like family."
+    },
+    "events": {
+      "eyebrow": "What’s happening",
+      "headline": "Upcoming at AIM",
+      "link_label": "See all events →",
+      "empty_message": "No events are scheduled right now. Check back soon.",
+      "photo_caption": "Train. Perform. Grow."
+    },
+    "instagram": {
+      "eyebrow": "Follow along",
+      "headline": "Life at AIM, on Instagram.",
+      "cta_title": "See what’s happening at AIM.",
+      "cta_text": "Classes, competitions, performances and studio moments.",
+      "button_label": "Follow us on Instagram"
+    },
+    "locations": {
+      "eyebrow": "Two studios, one AIM family",
+      "headline": "Find your studio"
+    },
+    "final_cta": {
+      "eyebrow": "Ready to move?",
+      "headline": "Your next chapter starts at AIM."
+    }
+  }
 }

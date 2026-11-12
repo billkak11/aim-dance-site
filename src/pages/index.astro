@@ -419,12 +419,12 @@ const programs = home.programs.map((program, i) => ({
       <div>
 
         <div class="eyebrow">
-          Meet the faculty
+          {home.sections.staff.eyebrow}
         </div>
 
 
         <h2>
-          Teachers who know how to bring out your best.
+          {home.sections.staff.headline}
         </h2>
 
       </div>
@@ -434,7 +434,7 @@ const programs = home.programs.map((program, i) => ({
         class="text-link"
         href="/staff"
       >
-        Meet the full team →
+        {home.sections.staff.link_label}
       </a>
 
 
@@ -534,21 +534,20 @@ const programs = home.programs.map((program, i) => ({
         <div>
 
           <div class="eyebrow">
-            The AIM experience
+            {home.sections.experience.eyebrow}
           </div>
 
 
           <h2>
-            Strong technique.<br/>
-            Real connection.
+            {home.sections.experience.headline_line1}<br/>
+            {home.sections.experience.headline_line2}
           </h2>
 
         </div>
 
 
         <p>
-          Dancers grow through expert instruction, performance opportunities
-          and a studio culture that feels like family.
+          {home.sections.experience.text}
         </p>
 
 
@@ -622,12 +621,12 @@ const programs = home.programs.map((program, i) => ({
           <div>
 
             <div class="eyebrow">
-              What’s happening
+              {home.sections.events.eyebrow}
             </div>
 
 
             <h2>
-              Upcoming at AIM
+              {home.sections.events.headline}
             </h2>
 
           </div>
@@ -637,7 +636,7 @@ const programs = home.programs.map((program, i) => ({
             class="text-link"
             href="/events"
           >
-            See all events →
+            {home.sections.events.link_label}
           </a>
 
 
@@ -650,7 +649,7 @@ const programs = home.programs.map((program, i) => ({
 
           {events.length
             ? events.map(e => <EventCard e={e}/>)
-            : <p>No events are scheduled right now. Check back soon.</p>
+            : <p>{home.sections.events.empty_message}</p>
           }
 
 
@@ -672,7 +671,7 @@ const programs = home.programs.map((program, i) => ({
 
 
         <span>
-          Train. Perform. Grow.
+          {home.sections.events.photo_caption}
         </span>
 
 
@@ -872,12 +871,12 @@ const programs = home.programs.map((program, i) => ({
         <div>
 
           <div class="eyebrow">
-            Follow along
+            {home.sections.instagram.eyebrow}
           </div>
 
 
           <h2>
-            Life at AIM, on Instagram.
+            {home.sections.instagram.headline}
           </h2>
 
         </div>
@@ -910,12 +909,12 @@ const programs = home.programs.map((program, i) => ({
         <div>
 
           <strong>
-            See what’s happening at AIM.
+            {home.sections.instagram.cta_title}
           </strong>
 
 
           <span>
-            Classes, competitions, performances and studio moments.
+            {home.sections.instagram.cta_text}
           </span>
 
         </div>
@@ -927,7 +926,7 @@ const programs = home.programs.map((program, i) => ({
           target="_blank"
           rel="noopener noreferrer"
         >
-          Follow us on Instagram
+          {home.sections.instagram.button_label}
         </a>
 
 
@@ -955,12 +954,12 @@ const programs = home.programs.map((program, i) => ({
 
 
       <div class="eyebrow light">
-        Two studios, one AIM family
+        {home.sections.locations.eyebrow}
       </div>
 
 
       <h2>
-        Find your studio
+        {home.sections.locations.headline}
       </h2>
 
 
@@ -1071,12 +1070,12 @@ const programs = home.programs.map((program, i) => ({
 
 
         <div class="eyebrow">
-          Ready to move?
+          {home.sections.final_cta.eyebrow}
         </div>
 
 
         <h2>
-          Your next chapter starts at AIM.
+          {home.sections.final_cta.headline}
         </h2>
 
 
