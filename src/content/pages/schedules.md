@@ -1,7 +1,7 @@
 ---
 title: Schedules
-description: 2026–2027 test recreational and company schedules for our Melville
-  and Commack studios.
+description: 2026–2027 recreational and company schedules for our Melville and
+  Commack studios.
 section: schedules
 schedules:
   - title: Melville Recreational Schedule 2026–2027
