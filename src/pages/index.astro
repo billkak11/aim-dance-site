@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import EventCard from '../components/EventCard.astro';
 import site from '../data/locations.json';
+import home from '../data/home.json';
 import { getCollection } from 'astro:content';
 
 
@@ -181,53 +182,36 @@ const programs = [
     <div class="wrap hero-content">
 
       <div class="eyebrow light">
-        Melville + Commack, New York
+        {home.hero.eyebrow}
       </div>
 
-
       <h1>
-        Technique first.<br/>
-        <em>Confidence always.</em>
+        {home.hero.headline_line1}<br/>
+        <em>{home.hero.headline_line2}</em>
       </h1>
 
-
       <p>
-        Competitive and recreational dance training in a professional,
-        positive environment where dancers are challenged, supported and inspired.
+        {home.hero.text}
       </p>
 
-
       <div class="actions">
-
-        <a
-          class="btn"
-          href="/programs"
-        >
-          Explore programs
+        <a class="btn" href={home.hero.button1_link}>
+          {home.hero.button1_label}
         </a>
-
-        <a
-          class="btn btn-light"
-          href="/schedules"
-        >
-          View 2026–27 schedules
+        <a class="btn btn-light" href={home.hero.button2_link}>
+          {home.hero.button2_label}
         </a>
-
       </div>
 
     </div>
 
-
     <div class="hero-stat">
-
       <b>
-        Since 2010
+        {home.hero.stat_title}
       </b>
-
       <span>
-        Training the next generation of dancers
+        {home.hero.stat_text}
       </span>
-
     </div>
 
   </section>
@@ -242,51 +226,29 @@ const programs = [
 
     <div class="wrap intro-grid">
 
-
       <div>
-
         <div class="eyebrow">
-          Art In Motion Dance Center
+          {home.intro.eyebrow}
         </div>
-
-
         <h2>
-          Train with purpose.<br/>
-          Dance with passion.
+          {home.intro.headline_line1}<br/>
+          {home.intro.headline_line2}
         </h2>
-
       </div>
-
-
 
       <div class="intro-copy">
-
         <p>
-          AIM provides quality dance education for competitive and
-          non-competitive students, with a strong focus on proper technique
-          across every style.
+          {home.intro.paragraph1}
         </p>
-
-
         <p>
-          Our goal is simple: create passionate, dedicated dancers in a
-          positive studio environment and give them the tools to succeed both
-          inside and outside the dance world.
+          {home.intro.paragraph2}
         </p>
-
-
-        <a
-          class="text-link"
-          href="/about-us"
-        >
-          Discover the AIM story →
+        <a class="text-link" href={home.intro.link_url}>
+          {home.intro.link_label}
         </a>
-
       </div>
 
-
     </div>
-
   </section>
 
 

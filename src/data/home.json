@@ -1,0 +1,23 @@
+{
+  "hero": {
+    "eyebrow": "Melville + Commack, New York",
+    "headline_line1": "Technique first.",
+    "headline_line2": "Confidence always.",
+    "text": "Competitive and recreational dance training in a professional, positive environment where dancers are challenged, supported and inspired.",
+    "button1_label": "Explore programs",
+    "button1_link": "/programs",
+    "button2_label": "View 2026–27 schedules",
+    "button2_link": "/schedules",
+    "stat_title": "Since 2010",
+    "stat_text": "Training the next generation of dancers"
+  },
+  "intro": {
+    "eyebrow": "Art In Motion Dance Center",
+    "headline_line1": "Train with purpose.",
+    "headline_line2": "Dance with passion.",
+    "paragraph1": "AIM provides quality dance education for competitive and non-competitive students, with a strong focus on proper technique across every style.",
+    "paragraph2": "Our goal is simple: create passionate, dedicated dancers in a positive studio environment and give them the tools to succeed both inside and outside the dance world.",
+    "link_label": "Discover the AIM story →",
+    "link_url": "/about-us"
+  }
+}

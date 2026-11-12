@@ -436,3 +436,83 @@ content:
         label: Instagram Page Link
         type: string
         description: "Full web address (starts with https://)"
+
+
+  # ==============================
+  # HOME PAGE
+  # ==============================
+  - name: home
+    label: Home Page
+    type: file
+    path: src/data/home.json
+    format: json
+
+    operations:
+      delete: false
+      rename: false
+
+    fields:
+      - name: hero
+        label: Top Banner (Hero)
+        type: object
+        fields:
+          - name: eyebrow
+            label: Small Line Above Headline
+            type: string
+          - name: headline_line1
+            label: Headline - First Line
+            type: string
+          - name: headline_line2
+            label: Headline - Second Line (shown in accent color)
+            type: string
+          - name: text
+            label: Intro Text
+            type: text
+          - name: button1_label
+            label: First Button - Text
+            type: string
+          - name: button1_link
+            label: First Button - Page Link
+            type: string
+            description: "Example: /programs"
+          - name: button2_label
+            label: Second Button - Text
+            type: string
+          - name: button2_link
+            label: Second Button - Page Link
+            type: string
+            description: "Example: /schedules"
+          - name: stat_title
+            label: Badge - Large Text
+            type: string
+            description: "Example: Since 2010"
+          - name: stat_text
+            label: Badge - Small Text
+            type: string
+
+      - name: intro
+        label: Welcome Section
+        type: object
+        fields:
+          - name: eyebrow
+            label: Small Line Above Headline
+            type: string
+          - name: headline_line1
+            label: Headline - First Line
+            type: string
+          - name: headline_line2
+            label: Headline - Second Line
+            type: string
+          - name: paragraph1
+            label: First Paragraph
+            type: text
+          - name: paragraph2
+            label: Second Paragraph
+            type: text
+          - name: link_label
+            label: Link - Text
+            type: string
+          - name: link_url
+            label: Link - Page Address
+            type: string
+            description: "Example: /about-us"
