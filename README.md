@@ -12,7 +12,6 @@ Modern rebuild of Art In Motion Dance Center using the live WordPress site as th
 - Full current 20-person staff roster, with recovered staff portraits where available
 - Current events content from the existing Claude project
 - Legacy/live URL coverage for `/team/`, `/calendars/`, `/testimonial/`, `/upcoming-events/`, and `/programs/genres/`
-- Netlify/Decap admin files retained from the original Claude project
 
 ## Local development
 ```bash
