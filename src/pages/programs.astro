@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import pageText from '../data/page-text.json';
 import { getCollection } from 'astro:content';
 
 const programs = (await getCollection('pages'))
@@ -47,16 +48,15 @@ const imageMap = {
     <div class="wrap programs-hero-copy">
 
       <div class="eyebrow light">
-        Learn. Train. Perform.
+        {pageText.programs.hero_eyebrow}
       </div>
 
       <h1>
-        Find the program that fits your dancer.
+        {pageText.programs.hero_title}
       </h1>
 
       <p>
-        From first classes to advanced performance training,
-        AIM offers a clear path for dancers to grow with confidence.
+        {pageText.programs.hero_text}
       </p>
 
     </div>

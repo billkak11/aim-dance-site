@@ -883,3 +883,121 @@ content:
             label: Important Note (optional)
             type: text
             description: "Optional notice shown on the genre's page, such as approval requirements. Leave blank for none."
+
+
+  # ==============================
+  # PAGE HEADINGS & TEXT
+  # ==============================
+  - name: page_text
+    label: Page Headings & Text
+    type: file
+    path: src/data/page-text.json
+    format: json
+
+    operations:
+      delete: false
+      rename: false
+
+    description: "Headings and intro text for the Events, Programs, Staff and Contact pages. Studio addresses, phone numbers and emails are edited under Contact Info & Social Links."
+
+    fields:
+      - name: events
+        label: Events Page
+        type: object
+        fields:
+          - name: title
+            label: "Page Title"
+            type: string
+          - name: text
+            label: "Intro Text"
+            type: text
+          - name: empty_message
+            label: "Message When No Events Are Scheduled"
+            type: string
+      - name: programs
+        label: Programs Page (Top Banner)
+        type: object
+        fields:
+          - name: hero_eyebrow
+            label: "Small Line Above Headline"
+            type: string
+          - name: hero_title
+            label: "Headline"
+            type: string
+          - name: hero_text
+            label: "Intro Text"
+            type: text
+      - name: staff
+        label: Staff Page
+        type: object
+        fields:
+          - name: hero_eyebrow
+            label: "Top Banner - Small Line"
+            type: string
+          - name: hero_title
+            label: "Top Banner - Headline"
+            type: string
+          - name: hero_text
+            label: "Top Banner - Intro Text"
+            type: text
+          - name: hero_badge_label
+            label: "Team Count Label (the number is automatic)"
+            type: string
+          - name: intro_eyebrow
+            label: "Intro Section - Small Line"
+            type: string
+          - name: intro_headline
+            label: "Intro Section - Headline"
+            type: string
+          - name: intro_text
+            label: "Intro Section - Paragraph"
+            type: text
+          - name: faculty_label
+            label: "Faculty Section - Small Label"
+            type: string
+          - name: faculty_headline
+            label: "Faculty Section - Headline"
+            type: string
+      - name: contact
+        label: Contact Page
+        type: object
+        fields:
+          - name: hero_eyebrow
+            label: "Top Banner - Small Line"
+            type: string
+          - name: hero_title
+            label: "Top Banner - Title"
+            type: string
+          - name: hero_text
+            label: "Top Banner - Intro Text"
+            type: text
+          - name: heading_eyebrow
+            label: "Main Section - Small Line"
+            type: string
+          - name: heading_title
+            label: "Main Section - Headline"
+            type: string
+          - name: heading_text
+            label: "Main Section - Paragraph"
+            type: text
+          - name: help_title
+            label: "Help Box - Title"
+            type: string
+          - name: help_text
+            label: "Help Box - Text"
+            type: text
+          - name: form_label
+            label: "Form - Small Label"
+            type: string
+          - name: form_title
+            label: "Form - Headline"
+            type: string
+          - name: form_text
+            label: "Form - Text"
+            type: text
+          - name: cta_eyebrow
+            label: "Bottom Banner - Small Line"
+            type: string
+          - name: cta_headline
+            label: "Bottom Banner - Headline"
+            type: string

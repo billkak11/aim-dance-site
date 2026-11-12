@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import pageText from '../data/page-text.json';
 import { getCollection } from 'astro:content';
 
 
@@ -113,19 +114,17 @@ const teacherTrainingImages = [
       <div>
 
         <div class="eyebrow light">
-          The people behind AIM
+          {pageText.staff.hero_eyebrow}
         </div>
 
 
         <h1>
-          Meet the team that moves AIM forward.
+          {pageText.staff.hero_title}
         </h1>
 
 
         <p>
-          Experienced educators, choreographers and mentors who help
-          every dancer build technique, confidence and a lifelong
-          love of movement.
+          {pageText.staff.hero_text}
         </p>
 
       </div>
@@ -142,7 +141,7 @@ const teacherTrainingImages = [
         </strong>
 
         <span>
-          faculty &amp; team members
+          {pageText.staff.hero_badge_label}
         </span>
 
       </div>
@@ -166,12 +165,12 @@ const teacherTrainingImages = [
       <div>
 
         <div class="eyebrow">
-          Faculty &amp; studio team
+          {pageText.staff.intro_eyebrow}
         </div>
 
 
         <h2>
-          Professional guidance. Personal attention.
+          {pageText.staff.intro_headline}
         </h2>
 
       </div>
@@ -179,10 +178,7 @@ const teacherTrainingImages = [
 
 
       <p>
-        Art In Motion brings together working professionals,
-        experienced teachers and dedicated studio leaders across
-        both Melville and Commack. Explore the team below and
-        open any profile to learn more.
+        {pageText.staff.intro_text}
       </p>
 
 
@@ -207,12 +203,12 @@ const teacherTrainingImages = [
         <div>
 
           <span>
-            Faculty
+            {pageText.staff.faculty_label}
           </span>
 
 
           <h2>
-            Meet our dance educators
+            {pageText.staff.faculty_headline}
           </h2>
 
         </div>
