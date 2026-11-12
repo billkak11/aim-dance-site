@@ -9,7 +9,8 @@
     "button2_label": "View 2026–27 schedules",
     "button2_link": "/schedules",
     "stat_title": "Since 2010",
-    "stat_text": "Training the next generation of dancers"
+    "stat_text": "Training the next generation of dancers",
+    "poster": "/uploads/home/hero.jpg"
   },
   "intro": {
     "eyebrow": "Art In Motion Dance Center",
@@ -140,5 +141,41 @@
       "eyebrow": "Ready to move?",
       "headline": "Your next chapter starts at AIM."
     }
+  },
+  "story_images": [
+    {
+      "image": "/uploads/drive/home/train-1.jpg",
+      "alt": "AIM dancers performing together"
+    },
+    {
+      "image": "/uploads/drive/home/train-2.jpg",
+      "alt": "AIM dancer performing on stage"
+    },
+    {
+      "image": "/uploads/drive/home/train-3.jpg",
+      "alt": "AIM dancers performing on stage"
+    }
+  ],
+  "experience_photos": [
+    {
+      "image": "/uploads/drive/home/connection-1.jpg",
+      "alt": "AIM dancer performing with confidence"
+    },
+    {
+      "image": "/uploads/drive/home/connection-2.jpg",
+      "alt": "AIM dancer on stage"
+    },
+    {
+      "image": "/uploads/drive/home/connection-3.jpg",
+      "alt": "AIM dancer demonstrating technique"
+    }
+  ],
+  "events_photo": {
+    "image": "/uploads/client/general/general-11.jpg",
+    "alt": "AIM dancers performing"
+  },
+  "studio_photos": {
+    "melville": "/uploads/home/studio-1.jpg",
+    "commack": "/uploads/home/studio-2.jpg"
   }
 }
