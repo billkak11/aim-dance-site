@@ -549,3 +549,27 @@ content:
             type: string
             required: true
             description: "Example: /recreational-dance/"
+
+      - name: genres
+        label: Dance Style Tiles (Home Page)
+        type: object
+        list:
+          min: 1
+          collapsible:
+            collapsed: true
+            summary: "{name}"
+        description: "The dance style photo tiles on the home page. Drag to reorder; numbers update automatically."
+        fields:
+          - name: name
+            label: Style Name
+            type: string
+            required: true
+          - name: image
+            label: Tile Image
+            type: image
+            required: true
+          - name: href
+            label: Page Link
+            type: string
+            required: true
+            description: "Example: /genres/jazz/"
