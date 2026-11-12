@@ -83,69 +83,10 @@ const genres = [
    HOMEPAGE PROGRAMS
    ========================================================= */
 
-const programs = [
-
-  {
-    number: '01',
-    name: 'Recreational Dance',
-    description:
-      'Weekly classes designed to build technique, confidence, creativity and a love of dance.',
-    image: '/uploads/drive/recreational/rec-main.jpg',
-    imageAlt: 'AIM recreational dancers',
-    href: '/recreational-dance/'
-  },
-
-  {
-    number: '02',
-    name: 'Competition Team',
-    description:
-      'Advanced training, rehearsals and performance opportunities for dedicated dancers.',
-    image: '/uploads/drive/general/competition.jpg',
-    imageAlt: 'AIM Competition Team dancers',
-    href: '/competition-team/'
-  },
-
-  {
-    number: '03',
-    name: 'Dance Genres',
-    description:
-      'Explore Ballet & Pointe, Jazz, Tap, Lyrical, Contemporary, Hip Hop, Acro and Jumps & Turns.',
-    image: '/uploads/drive/genres/ballet.jpg',
-    imageAlt: 'Dance genres at AIM',
-    href: '/genres/'
-  },
-
-  {
-    number: '04',
-    name: 'Summer Programs',
-    description:
-      'Keep dancers moving, training and growing through seasonal summer opportunities.',
-    image: '/uploads/drive/summer/summer-1.jpg',
-    imageAlt: 'AIM Summer Programs',
-    href: '/summer-programs/'
-  },
-
-  {
-    number: '05',
-    name: 'Birthday Parties',
-    description:
-      'Celebrate your dancer with a fun and memorable birthday experience at AIM.',
-    image: '/uploads/drive/birthday/birthday.jpg',
-    imageAlt: 'Birthday Parties at AIM',
-    href: '/birthday-parties/'
-  },
-
-  {
-    number: '06',
-    name: 'Kickline Technique',
-    description:
-      'Focused training designed to strengthen precision, performance quality and kickline technique.',
-    image: '/uploads/drive/kickline/kickline-2.jpg',
-    imageAlt: 'Kickline Technique at AIM',
-    href: '/kickline-technique/'
-  }
-
-];
+const programs = home.programs.map((program, i) => ({
+  ...program,
+  number: String(i + 1).padStart(2, '0')
+}));
 ---
 
 <Base title="Art In Motion Dance Center | Melville & Commack, NY">
@@ -453,7 +394,7 @@ const programs = [
 
               <img
                 src={program.image}
-                alt={program.imageAlt}
+                alt={program.image_alt}
                 loading="lazy"
               />
 

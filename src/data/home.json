@@ -19,5 +19,49 @@
     "paragraph2": "Our goal is simple: create passionate, dedicated dancers in a positive studio environment and give them the tools to succeed both inside and outside the dance world.",
     "link_label": "Discover the AIM story →",
     "link_url": "/about-us"
-  }
+  },
+  "programs": [
+    {
+      "name": "Recreational Dance",
+      "description": "Weekly classes designed to build technique, confidence, creativity and a love of dance.",
+      "image": "/uploads/drive/recreational/rec-main.jpg",
+      "image_alt": "AIM recreational dancers",
+      "href": "/recreational-dance/"
+    },
+    {
+      "name": "Competition Team",
+      "description": "Advanced training, rehearsals and performance opportunities for dedicated dancers.",
+      "image": "/uploads/drive/general/competition.jpg",
+      "image_alt": "AIM Competition Team dancers",
+      "href": "/competition-team/"
+    },
+    {
+      "name": "Dance Genres",
+      "description": "Explore Ballet & Pointe, Jazz, Tap, Lyrical, Contemporary, Hip Hop, Acro and Jumps & Turns.",
+      "image": "/uploads/drive/genres/ballet.jpg",
+      "image_alt": "Dance genres at AIM",
+      "href": "/genres/"
+    },
+    {
+      "name": "Summer Programs",
+      "description": "Keep dancers moving, training and growing through seasonal summer opportunities.",
+      "image": "/uploads/drive/summer/summer-1.jpg",
+      "image_alt": "AIM Summer Programs",
+      "href": "/summer-programs/"
+    },
+    {
+      "name": "Birthday Parties",
+      "description": "Celebrate your dancer with a fun and memorable birthday experience at AIM.",
+      "image": "/uploads/drive/birthday/birthday.jpg",
+      "image_alt": "Birthday Parties at AIM",
+      "href": "/birthday-parties/"
+    },
+    {
+      "name": "Kickline Technique",
+      "description": "Focused training designed to strengthen precision, performance quality and kickline technique.",
+      "image": "/uploads/drive/kickline/kickline-2.jpg",
+      "image_alt": "Kickline Technique at AIM",
+      "href": "/kickline-technique/"
+    }
+  ]
 }
