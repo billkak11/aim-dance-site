@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import genreData from '../../data/genres.json';
 import { getCollection, render } from 'astro:content';
 
 
@@ -9,69 +10,17 @@ import { getCollection, render } from 'astro:content';
 
 export function getStaticPaths() {
 
-  const genres = {
-
-    'ballet-pointe': {
-      name: 'Ballet & Pointe',
-      image: '/uploads/drive/genres/ballet.jpg',
-      description:
-        'Build strength, alignment, flexibility and classical technique through structured ballet training.',
-      note:
-        'Pointe registration is only available to our more advanced dancers with studio approval necessary in order to keep our dancers safe.'
-    },
-
-    'jazz': {
-      name: 'Jazz',
-      image: '/uploads/drive/genres/jazz.jpg',
-      description:
-        'High-energy movement focused on musicality, turns, jumps, flexibility and performance quality.'
-    },
-
-    'tap': {
-      name: 'Tap',
-      image: '/uploads/drive/genres/tap.jpg',
-      description:
-        'Develop rhythm, musicality and precise footwork while learning to create movement through sound.'
-    },
-
-    'lyrical': {
-      name: 'Lyrical',
-      image: '/uploads/drive/genres/lyrical.png',
-      description:
-        'A blend of ballet and jazz that combines technique, fluid movement and emotional storytelling.'
-    },
-
-    'contemporary': {
-      name: 'Contemporary',
-      image: '/uploads/drive/genres/contemporary.jpg',
-      description:
-        'Explore expressive movement, musicality, floor work and dynamic technique in a creative environment.'
-    },
-
-    'hip-hop': {
-      name: 'Hip Hop',
-      image: '/uploads/drive/genres/hip-hop.jpg',
-      description:
-        'Energetic movement incorporating rhythm, grooves, musicality and current street-dance influences.'
-    },
-
-    'acro': {
-      name: 'Acro',
-      image: '/uploads/drive/genres/acro.jpg',
-      description:
-        'Combine dance technique with flexibility, strength, balance and controlled acrobatic skills.'
-    },
-
-    'jumps-turns': {
-      name: 'Jumps & Turns',
-      image: '/uploads/drive/kickline/kickline-1.jpg',
-      description:
-        'Focused technique training designed to strengthen jumps, turns, control, alignment and performance consistency.',
-      note:
-        'Mandatory for company dancers. Also available to recreational students upon request.'
-    }
-
-  };
+  const genres = Object.fromEntries(
+    genreData.genres.map((g) => [
+      g.slug,
+      {
+        name: g.name,
+        image: g.image,
+        description: g.page_description,
+        ...(g.note ? { note: g.note } : {})
+      }
+    ])
+  );
 
 
   return Object.entries(genres).map(([slug, genre]) => ({
