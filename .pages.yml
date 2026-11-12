@@ -573,3 +573,96 @@ content:
             type: string
             required: true
             description: "Example: /genres/jazz/"
+
+      - name: sections
+        label: Other Home Page Headings & Text
+        type: object
+        description: "Headings and short text for the lower sections of the home page. Event cards, faculty and studio details come from their own sections."
+        fields:
+          - name: staff
+            label: Faculty Section
+            type: object
+            fields:
+              - name: eyebrow
+                label: Small Line Above Headline
+                type: string
+              - name: headline
+                label: Headline
+                type: string
+              - name: link_label
+                label: Link Text
+                type: string
+          - name: experience
+            label: 'The AIM Experience Section'
+            type: object
+            fields:
+              - name: eyebrow
+                label: Small Line Above Headline
+                type: string
+              - name: headline_line1
+                label: Headline - First Line
+                type: string
+              - name: headline_line2
+                label: Headline - Second Line
+                type: string
+              - name: text
+                label: Paragraph
+                type: text
+          - name: events
+            label: Upcoming Events Section
+            type: object
+            fields:
+              - name: eyebrow
+                label: Small Line Above Headline
+                type: string
+              - name: headline
+                label: Headline
+                type: string
+              - name: link_label
+                label: Link Text
+                type: string
+              - name: empty_message
+                label: Message When No Events Are Scheduled
+                type: string
+              - name: photo_caption
+                label: Photo Caption
+                type: string
+          - name: instagram
+            label: Instagram Section
+            type: object
+            fields:
+              - name: eyebrow
+                label: Small Line Above Headline
+                type: string
+              - name: headline
+                label: Headline
+                type: string
+              - name: cta_title
+                label: Bottom Box - Title
+                type: string
+              - name: cta_text
+                label: Bottom Box - Text
+                type: text
+              - name: button_label
+                label: Bottom Box - Button Text
+                type: string
+          - name: locations
+            label: Studio Locations Section
+            type: object
+            fields:
+              - name: eyebrow
+                label: Small Line Above Headline
+                type: string
+              - name: headline
+                label: Headline
+                type: string
+          - name: final_cta
+            label: Bottom Call-to-Action
+            type: object
+            fields:
+              - name: eyebrow
+                label: Small Line Above Headline
+                type: string
+              - name: headline
+                label: Headline
+                type: string
