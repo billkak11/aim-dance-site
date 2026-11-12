@@ -1,0 +1,33 @@
+---
+import Base from '../layouts/Base.astro';
+import pageText from '../data/page-text.json';
+---
+
+<Base title="Page Not Found | Art In Motion Dance Center">
+
+  <section class="subhero">
+    <div class="wrap">
+      <div class="eyebrow light">
+        {pageText.not_found.eyebrow}
+      </div>
+      <h1>
+        {pageText.not_found.title}
+      </h1>
+      <p>
+        {pageText.not_found.text}
+      </p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="wrap">
+      <div class="actions">
+        <a class="btn" href="/">Back to home</a>
+        <a class="btn outline" href="/programs">View programs</a>
+        <a class="btn outline" href="/schedules">View schedules</a>
+        <a class="btn outline" href="/contact">Contact us</a>
+      </div>
+    </div>
+  </section>
+
+</Base>
