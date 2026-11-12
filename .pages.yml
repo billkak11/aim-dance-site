@@ -1001,3 +1001,16 @@ content:
           - name: cta_headline
             label: "Bottom Banner - Headline"
             type: string
+      - name: not_found
+        label: '"Page Not Found" Page'
+        type: object
+        fields:
+          - name: eyebrow
+            label: Small Line Above Title
+            type: string
+          - name: title
+            label: Title
+            type: string
+          - name: text
+            label: Message
+            type: text

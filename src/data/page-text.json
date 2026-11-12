@@ -34,5 +34,10 @@
     "form_text": "Complete the form below and someone from the AIM team will be in touch.",
     "cta_eyebrow": "Ready to dance?",
     "cta_headline": "Find your place at AIM."
+  },
+  "not_found": {
+    "eyebrow": "Error 404",
+    "title": "Page not found.",
+    "text": "Sorry, we couldn't find that page. It may have moved. Try one of the links below, or contact the studio and we'll point you in the right direction."
   }
 }
