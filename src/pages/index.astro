@@ -60,7 +60,7 @@ const programs = home.programs.map((program, i) => ({
     >
 
       <source
-        src="/uploads/client/videos/hero-2.MP4"
+        src={home.hero.video}
         type="video/mp4"
       />
 
@@ -648,20 +648,19 @@ const programs = home.programs.map((program, i) => ({
         <div>
 
           <div class="eyebrow">
-            Past workshop recaps
+            {home.sections.recaps.eyebrow}
           </div>
 
 
           <h2>
-            Experience AIM in motion.
+            {home.sections.recaps.headline}
           </h2>
 
         </div>
 
 
         <p>
-          Take a look back at special workshops and guest training
-          experiences hosted at Art In Motion Dance Center.
+          {home.sections.recaps.text}
         </p>
 
 
@@ -671,114 +670,35 @@ const programs = home.programs.map((program, i) => ({
 
       <div class="masterclass-recap-grid">
 
-
-        <!-- TRIBE 99 -->
-
-        <article class="masterclass-recap-card">
-
-
-          <div class="masterclass-video-wrap">
-
-
-            <video
-              controls
-              playsinline
-              preload="metadata"
-              aria-label="Alexandra Lund Tribe 99 Workshop"
-            >
-
-              <source
-                src="/uploads/drive/videos/tribe-99.mp4"
-                type="video/mp4"
-              />
-
-
-              Your browser does not support video playback.
-
-            </video>
-
-
-          </div>
-
-
-
-          <div class="masterclass-recap-copy">
-
-
-            <span>
-              Workshop Recap
-            </span>
-
-
-            <h3>
-              Alexandra Lund
-            </h3>
-
-
-            <p>
-              Tribe 99 Workshop
-            </p>
-
-
-          </div>
-
-
-        </article>
-
-
-
-        <!-- JONA BIDDLE -->
-
-        <article class="masterclass-recap-card">
-
-
-          <div class="masterclass-video-wrap">
-
-
-            <video
-              controls
-              playsinline
-              preload="metadata"
-              aria-label="Jona Biddle Hip Hop and Knicks City Kids Workshop"
-            >
-
-              <source
-                src="/uploads/drive/videos/jona-biddle.mp4"
-                type="video/mp4"
-              />
-
-
-              Your browser does not support video playback.
-
-            </video>
-
-
-          </div>
-
-
-
-          <div class="masterclass-recap-copy">
-
-
-            <span>
-              Workshop Recap
-            </span>
-
-
-            <h3>
-              Jona Biddle
-            </h3>
-
-
-            <p>
-              Hip Hop &amp; Knicks City Kids Workshop
-            </p>
-
-
-          </div>
-
-
-        </article>
+        {home.recaps.map((r) => (
+          <article class="masterclass-recap-card">
+            <div class="masterclass-video-wrap">
+              <video
+                controls
+                playsinline
+                preload="metadata"
+                aria-label={`${r.title} ${r.subtitle}`}
+              >
+                <source
+                  src={r.video}
+                  type="video/mp4"
+                />
+                Your browser does not support video playback.
+              </video>
+            </div>
+            <div class="masterclass-recap-copy">
+              <span>
+                Workshop Recap
+              </span>
+              <h3>
+                {r.title}
+              </h3>
+              <p>
+                {r.subtitle}
+              </p>
+            </div>
+          </article>
+        ))}
 
 
       </div>
