@@ -272,3 +272,167 @@ content:
         type: string
         required: true
         description: "Describe the calendar image for accessibility."
+
+
+  # ==============================
+  # SITE ALERT BANNER
+  # ==============================
+  - name: banner
+    label: Site Alert Banner
+    type: file
+    path: src/data/banner.json
+    format: json
+
+    operations:
+      delete: false
+      rename: false
+
+    fields:
+      - name: show
+        label: Show Banner on Site
+        type: boolean
+        description: "Turn on to show the message across the top of every page (for example, weather closings). Turn off to hide it."
+
+      - name: message
+        label: Banner Message
+        type: string
+        description: "Example: We are closed today due to weather. Please stay safe."
+
+
+  # ==============================
+  # ABOUT & PROGRAM PAGES
+  # ==============================
+  - name: pages
+    label: About & Program Pages
+    type: collection
+    path: src/content/pages
+    format: yaml-frontmatter
+    exclude:
+      - schedules.md
+
+    filename:
+      template: "{primary}.md"
+
+    view:
+      primary: title
+      fields:
+        - title
+        - description
+      sort:
+        - order
+        - title
+      default:
+        sort: order
+        order: asc
+
+    operations:
+      create: false
+      rename: false
+      delete: false
+
+    fields:
+      - name: title
+        label: Page Title
+        type: string
+        required: true
+
+      - name: description
+        label: Short Description
+        type: text
+        description: "One or two sentences shown under the title and in search results."
+
+      - name: image
+        label: Main Image
+        type: image
+        description: "Optional picture for this page."
+
+      - name: section
+        label: Page Group
+        type: select
+        readonly: true
+        description: "System value. Please do not change."
+        options:
+          values:
+            - none
+            - programs
+            - schedules
+
+      - name: order
+        label: Display Order
+        type: number
+        readonly: true
+        description: "System value. Please do not change."
+
+      - name: body
+        label: Page Content
+        type: rich-text
+        options:
+          format: markdown
+          media: false
+
+
+  # ==============================
+  # STUDIO CONTACT INFO & SOCIAL
+  # ==============================
+  - name: contact
+    label: Contact Info & Social Links
+    type: file
+    path: src/data/locations.json
+    format: json
+
+    operations:
+      delete: false
+      rename: false
+
+    fields:
+      - name: locations
+        label: Studio Locations
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{name}"
+        fields:
+          - name: name
+            label: Studio Name
+            type: string
+            required: true
+            readonly: true
+            description: "System value. Please do not change."
+
+          - name: address
+            label: Address
+            type: string
+            required: true
+
+          - name: phone
+            label: Phone Number
+            type: string
+            required: true
+            description: "Example: (631) 424-2243"
+
+          - name: email
+            label: Studio Email
+            type: string
+            required: true
+
+          - name: portal
+            label: Parent Portal Link
+            type: string
+            required: true
+            description: "Full web address (starts with https://)"
+
+      - name: email
+        label: Main Contact Email
+        type: string
+        required: true
+
+      - name: facebook
+        label: Facebook Page Link
+        type: string
+        description: "Full web address (starts with https://)"
+
+      - name: instagram
+        label: Instagram Page Link
+        type: string
+        description: "Full web address (starts with https://)"
