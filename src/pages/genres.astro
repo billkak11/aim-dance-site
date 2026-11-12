@@ -1,71 +1,13 @@
 ---
 import Base from '../layouts/Base.astro';
+import genreData from '../data/genres.json';
 
-const genreCards = [
-  {
-    name: 'Ballet & Pointe',
-    image: '/uploads/drive/genres/ballet.jpg',
-    href: '/genres/ballet-pointe/',
-    description:
-      'Build strength, alignment, flexibility and classical technique through structured ballet and pointe training.'
-  },
-
-  {
-    name: 'Jazz',
-    image: '/uploads/drive/genres/jazz.jpg',
-    href: '/genres/jazz/',
-    description:
-      'High-energy movement focused on musicality, turns, jumps, flexibility and performance quality.'
-  },
-
-  {
-    name: 'Tap',
-    image: '/uploads/drive/genres/tap.jpg',
-    href: '/genres/tap/',
-    description:
-      'Develop rhythm, musicality and precise footwork while learning to create movement through sound.'
-  },
-
-  {
-    name: 'Lyrical',
-    image: '/uploads/drive/genres/lyrical.png',
-    href: '/genres/lyrical/',
-    description:
-      'A blend of ballet and jazz that combines technique, fluid movement and emotional storytelling.'
-  },
-
-  {
-    name: 'Contemporary',
-    image: '/uploads/drive/genres/contemporary.jpg',
-    href: '/genres/contemporary/',
-    description:
-      'Explore expressive movement, musicality, floor work and dynamic technique in a creative environment.'
-  },
-
-  {
-    name: 'Hip Hop',
-    image: '/uploads/drive/genres/hip-hop.jpg',
-    href: '/genres/hip-hop/',
-    description:
-      'Energetic movement incorporating rhythm, grooves, musicality and current street-dance influences.'
-  },
-
-  {
-    name: 'Acro',
-    image: '/uploads/drive/genres/acro.jpg',
-    href: '/genres/acro/',
-    description:
-      'Combine dance technique with flexibility, strength, balance and controlled acrobatic skills.'
-  },
-
-  {
-    name: 'Jumps & Turns',
-    image: '/uploads/drive/kickline/kickline-1.jpg',
-    href: '/genres/jumps-turns/',
-    description:
-      'Focused technique training designed to strengthen jumps, turns, control, alignment and performance consistency.'
-  }
-];
+const genreCards = genreData.genres.map((g) => ({
+  name: g.name,
+  image: g.image,
+  href: `/genres/${g.slug}/`,
+  description: g.card_description
+}));
 ---
 
 <Base
@@ -82,16 +24,15 @@ const genreCards = [
     <div class="wrap">
 
       <div class="eyebrow light">
-        Find your movement
+        {genreData.page.hero_eyebrow}
       </div>
 
       <h1>
-        Dance Genres
+        {genreData.page.hero_title}
       </h1>
 
       <p>
-        Explore the styles offered at Art In Motion Dance Center and
-        discover the training that inspires your dancer.
+        {genreData.page.hero_text}
       </p>
 
     </div>
@@ -114,20 +55,18 @@ const genreCards = [
         <div>
 
           <div class="eyebrow">
-            Train with AIM
+            {genreData.page.intro_eyebrow}
           </div>
 
           <h2>
-            Find the style that moves you.
+            {genreData.page.intro_headline}
           </h2>
 
         </div>
 
 
         <p>
-          From foundational technique to high-energy performance,
-          AIM offers a variety of dance styles designed to help dancers
-          grow in confidence, artistry and ability.
+          {genreData.page.intro_text}
         </p>
 
       </div>
@@ -203,11 +142,11 @@ const genreCards = [
       <div>
 
         <div class="eyebrow light">
-          Ready to dance?
+          {genreData.page.cta_eyebrow}
         </div>
 
         <h2>
-          Find your class at AIM.
+          {genreData.page.cta_headline}
         </h2>
 
       </div>

@@ -316,6 +316,7 @@ content:
     format: yaml-frontmatter
     exclude:
       - schedules.md
+      - genres.md
 
     filename:
       template: "{primary}.md"
@@ -800,3 +801,85 @@ content:
             label: Workshop Name
             type: string
             required: true
+
+
+  # ==============================
+  # DANCE GENRES
+  # ==============================
+  - name: genres
+    label: Dance Genres
+    type: file
+    path: src/data/genres.json
+    format: json
+
+    operations:
+      delete: false
+      rename: false
+
+    fields:
+      - name: page
+        label: Dance Genres Page (Headings & Text)
+        type: object
+        fields:
+          - name: hero_eyebrow
+            label: Top Banner - Small Line
+            type: string
+          - name: hero_title
+            label: Top Banner - Page Title
+            type: string
+          - name: hero_text
+            label: Top Banner - Intro Text
+            type: text
+          - name: intro_eyebrow
+            label: Intro Section - Small Line
+            type: string
+          - name: intro_headline
+            label: Intro Section - Headline
+            type: string
+          - name: intro_text
+            label: Intro Section - Paragraph
+            type: text
+          - name: cta_eyebrow
+            label: Bottom Banner - Small Line
+            type: string
+          - name: cta_headline
+            label: Bottom Banner - Headline
+            type: string
+
+      - name: genres
+        label: Dance Genres
+        type: object
+        list:
+          min: 8
+          max: 8
+          collapsible:
+            collapsed: true
+            summary: "{name}"
+        description: "Edit each genre once; changes show on the Dance Genres overview page and on that genre's own page. Drag to reorder. (The list is fixed at eight genres; contact your web developer to add or remove one.)"
+        fields:
+          - name: slug
+            label: Page Address Ending
+            type: string
+            readonly: true
+            description: "System value. Please do not change."
+          - name: name
+            label: Genre Name
+            type: string
+            required: true
+          - name: image
+            label: Genre Image
+            type: image
+            required: true
+            description: "Max file size: 5 MB."
+          - name: card_description
+            label: Short Description (shown on the overview page)
+            type: text
+            required: true
+          - name: page_description
+            label: Page Description (shown at the top of the genre's own page)
+            type: text
+            required: true
+          - name: note
+            label: Important Note (optional)
+            type: text
+            description: "Optional notice shown on the genre's page, such as approval requirements. Leave blank for none."

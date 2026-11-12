@@ -1,0 +1,78 @@
+{
+  "page": {
+    "hero_eyebrow": "Find your movement",
+    "intro_eyebrow": "Train with AIM",
+    "intro_headline": "Find the style that moves you.",
+    "intro_text": "From foundational technique to high-energy performance, AIM offers a variety of dance styles designed to help dancers grow in confidence, artistry and ability.",
+    "hero_text": "Explore the styles offered at Art In Motion Dance Center and discover the training that inspires your dancer.",
+    "cta_eyebrow": "Ready to dance?",
+    "cta_headline": "Find your class at AIM.",
+    "hero_title": "Dance Genres"
+  },
+  "genres": [
+    {
+      "slug": "ballet-pointe",
+      "name": "Ballet & Pointe",
+      "image": "/uploads/drive/genres/ballet.jpg",
+      "card_description": "Build strength, alignment, flexibility and classical technique through structured ballet and pointe training.",
+      "page_description": "Build strength, alignment, flexibility and classical technique through structured ballet training.",
+      "note": "Pointe registration is only available to our more advanced dancers with studio approval necessary in order to keep our dancers safe."
+    },
+    {
+      "slug": "jazz",
+      "name": "Jazz",
+      "image": "/uploads/drive/genres/jazz.jpg",
+      "card_description": "High-energy movement focused on musicality, turns, jumps, flexibility and performance quality.",
+      "page_description": "High-energy movement focused on musicality, turns, jumps, flexibility and performance quality.",
+      "note": ""
+    },
+    {
+      "slug": "tap",
+      "name": "Tap",
+      "image": "/uploads/drive/genres/tap.jpg",
+      "card_description": "Develop rhythm, musicality and precise footwork while learning to create movement through sound.",
+      "page_description": "Develop rhythm, musicality and precise footwork while learning to create movement through sound.",
+      "note": ""
+    },
+    {
+      "slug": "lyrical",
+      "name": "Lyrical",
+      "image": "/uploads/drive/genres/lyrical.png",
+      "card_description": "A blend of ballet and jazz that combines technique, fluid movement and emotional storytelling.",
+      "page_description": "A blend of ballet and jazz that combines technique, fluid movement and emotional storytelling.",
+      "note": ""
+    },
+    {
+      "slug": "contemporary",
+      "name": "Contemporary",
+      "image": "/uploads/drive/genres/contemporary.jpg",
+      "card_description": "Explore expressive movement, musicality, floor work and dynamic technique in a creative environment.",
+      "page_description": "Explore expressive movement, musicality, floor work and dynamic technique in a creative environment.",
+      "note": ""
+    },
+    {
+      "slug": "hip-hop",
+      "name": "Hip Hop",
+      "image": "/uploads/drive/genres/hip-hop.jpg",
+      "card_description": "Energetic movement incorporating rhythm, grooves, musicality and current street-dance influences.",
+      "page_description": "Energetic movement incorporating rhythm, grooves, musicality and current street-dance influences.",
+      "note": ""
+    },
+    {
+      "slug": "acro",
+      "name": "Acro",
+      "image": "/uploads/drive/genres/acro.jpg",
+      "card_description": "Combine dance technique with flexibility, strength, balance and controlled acrobatic skills.",
+      "page_description": "Combine dance technique with flexibility, strength, balance and controlled acrobatic skills.",
+      "note": ""
+    },
+    {
+      "slug": "jumps-turns",
+      "name": "Jumps & Turns",
+      "image": "/uploads/drive/kickline/kickline-1.jpg",
+      "card_description": "Focused technique training designed to strengthen jumps, turns, control, alignment and performance consistency.",
+      "page_description": "Focused technique training designed to strengthen jumps, turns, control, alignment and performance consistency.",
+      "note": "Mandatory for company dancers. Also available to recreational students upon request."
+    }
+  ]
+}
