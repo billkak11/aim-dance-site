@@ -1,11 +1,19 @@
 ---
 import Base from '../layouts/Base.astro';
+import pageText from '../data/page-text.json';
 import site from '../data/locations.json';
 
 const melville =
   site.locations.find((location) =>
     location.name.toLowerCase().includes('melville')
   );
+
+const splitAddress = (address = '') => {
+  const i = address.indexOf(',');
+  return i === -1
+    ? [address, '']
+    : [address.slice(0, i + 1), address.slice(i + 1).trim()];
+};
 
 const commack =
   site.locations.find((location) =>
@@ -36,17 +44,15 @@ const commack =
       <div>
 
         <div class="eyebrow light">
-          We'd love to hear from you
+          {pageText.contact.hero_eyebrow}
         </div>
 
         <h1>
-          Contact us.
+          {pageText.contact.hero_title}
         </h1>
 
         <p>
-          Questions about classes, registration, company training,
-          events or parties? Connect with the AIM team and we'll
-          point you in the right direction.
+          {pageText.contact.hero_text}
         </p>
 
       </div>
@@ -70,18 +76,17 @@ const commack =
         <div>
 
           <div class="eyebrow">
-            Get in touch
+            {pageText.contact.heading_eyebrow}
           </div>
 
           <h2>
-            How can we help?
+            {pageText.contact.heading_title}
           </h2>
 
         </div>
 
         <p>
-          Send us a message using the form or contact the studio
-          location most convenient for you.
+          {pageText.contact.heading_text}
         </p>
 
       </div>
@@ -119,16 +124,16 @@ const commack =
               <div class="aim-location-details">
 
                 <p>
-                  165 Walt Whitman Rd,<br/>
-                  Melville, NY 11747
+                  {splitAddress(melville?.address)[0]}<br/>
+                  {splitAddress(melville?.address)[1]}
                 </p>
 
-                <a href="tel:6314242243">
-                  (631) 424-2243
+                <a href={`tel:${(melville?.phone ?? '').replace(/\D/g, '')}`}>
+                  {melville?.phone}
                 </a>
 
-                <a href="mailto:siobhan@aimdanceny.com">
-                  siobhan@aimdanceny.com
+                <a href={`mailto:${melville?.email}`}>
+                  {melville?.email}
                 </a>
 
               </div>
@@ -151,7 +156,7 @@ const commack =
 
                 <a
                   class="aim-direction-link"
-                  href="https://www.google.com/maps/search/?api=1&query=165+Walt+Whitman+Rd+Melville+NY+11747"
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(melville?.address ?? '')}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -187,16 +192,16 @@ const commack =
               <div class="aim-location-details">
 
                 <p>
-                  6090 Jericho Turnpike,<br/>
-                  Commack, NY 11725
+                  {splitAddress(commack?.address)[0]}<br/>
+                  {splitAddress(commack?.address)[1]}
                 </p>
 
-                <a href="tel:6316518656">
-                  (631) 651-8656
+                <a href={`tel:${(commack?.phone ?? '').replace(/\D/g, '')}`}>
+                  {commack?.phone}
                 </a>
 
-                <a href="mailto:info@aimdanceny.com">
-                  info@aimdanceny.com
+                <a href={`mailto:${commack?.email}`}>
+                  {commack?.email}
                 </a>
 
               </div>
@@ -219,7 +224,7 @@ const commack =
 
                 <a
                   class="aim-direction-link"
-                  href="https://www.google.com/maps/search/?api=1&query=6090+Jericho+Turnpike+Commack+NY+11725"
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(commack?.address ?? '')}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -239,12 +244,11 @@ const commack =
           <div class="aim-contact-help">
 
             <span>
-              Not sure which studio?
+              {pageText.contact.help_title}
             </span>
 
             <p>
-              Send us a message and our team will help you find
-              the right class, program and location.
+              {pageText.contact.help_text}
             </p>
 
           </div>
@@ -262,16 +266,15 @@ const commack =
           <div class="aim-contact-form-top">
 
             <span>
-              Send us a message
+              {pageText.contact.form_label}
             </span>
 
             <h3>
-              Let's get you started.
+              {pageText.contact.form_title}
             </h3>
 
             <p>
-              Complete the form below and someone from the AIM team
-              will be in touch.
+              {pageText.contact.form_text}
             </p>
 
           </div>
@@ -309,11 +312,11 @@ const commack =
       <div>
 
         <div class="eyebrow light">
-          Ready to dance?
+          {pageText.contact.cta_eyebrow}
         </div>
 
         <h2>
-          Find your place at AIM.
+          {pageText.contact.cta_headline}
         </h2>
 
       </div>

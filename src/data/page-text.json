@@ -1,0 +1,38 @@
+{
+  "events": {
+    "title": "Upcoming events",
+    "text": "Workshops, master classes and studio events.",
+    "empty_message": "No events are scheduled right now. Check back soon."
+  },
+  "programs": {
+    "hero_eyebrow": "Learn. Train. Perform.",
+    "hero_title": "Find the program that fits your dancer.",
+    "hero_text": "From first classes to advanced performance training, AIM offers a clear path for dancers to grow with confidence."
+  },
+  "staff": {
+    "hero_eyebrow": "The people behind AIM",
+    "hero_title": "Meet the team that moves AIM forward.",
+    "hero_text": "Experienced educators, choreographers and mentors who help every dancer build technique, confidence and a lifelong love of movement.",
+    "hero_badge_label": "faculty & team members",
+    "intro_eyebrow": "Faculty & studio team",
+    "intro_headline": "Professional guidance. Personal attention.",
+    "intro_text": "Art In Motion brings together working professionals, experienced teachers and dedicated studio leaders across both Melville and Commack. Explore the team below and open any profile to learn more.",
+    "faculty_label": "Faculty",
+    "faculty_headline": "Meet our dance educators"
+  },
+  "contact": {
+    "hero_eyebrow": "We'd love to hear from you",
+    "hero_title": "Contact us.",
+    "hero_text": "Questions about classes, registration, company training, events or parties? Connect with the AIM team and we'll point you in the right direction.",
+    "heading_eyebrow": "Get in touch",
+    "heading_title": "How can we help?",
+    "heading_text": "Send us a message using the form or contact the studio location most convenient for you.",
+    "help_title": "Not sure which studio?",
+    "help_text": "Send us a message and our team will help you find the right class, program and location.",
+    "form_label": "Send us a message",
+    "form_title": "Let's get you started.",
+    "form_text": "Complete the form below and someone from the AIM team will be in touch.",
+    "cta_eyebrow": "Ready to dance?",
+    "cta_headline": "Find your place at AIM."
+  }
+}

@@ -1,14 +1,15 @@
 ---
 import Base from '../layouts/Base.astro';
+import pageText from '../data/page-text.json';
 import EventCard from '../components/EventCard.astro';
 import { getCollection } from 'astro:content';
 const yesterday = new Date(Date.now() - 864e5);
 const events = (await getCollection('events')).filter((e) => e.data.date >= yesterday).sort((a, b) => a.data.date.getTime() - b.data.date.getTime());
 ---
 <Base title="Events | AIM Dance">
-  <div class="subhero"><div class="wrap"><h1>Upcoming events</h1><p>Workshops, master classes and studio events.</p></div></div>
+  <div class="subhero"><div class="wrap"><h1>{pageText.events.title}</h1><p>{pageText.events.text}</p></div></div>
   <section><div class="wrap"><div class="events">
-    {events.length === 0 && <p class="empty">No events are scheduled right now. Check back soon.</p>}
+    {events.length === 0 && <p class="empty">{pageText.events.empty_message}</p>}
     {events.map((e) => <EventCard e={e} />)}
   </div></div></section>
 </Base>
