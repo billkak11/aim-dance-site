@@ -88,6 +88,7 @@ content:
       - name: image
         label: Event Image
         type: image
+        description: "Max file size: 5 MB."
 
       - name: body
         label: Event Description
@@ -145,7 +146,7 @@ content:
       - name: photo
         label: Headshot
         type: image
-        description: "Use a consistent portrait-style staff image."
+        description: "Use a consistent portrait-style staff image. Max file size: 5 MB."
 
       - name: order
         label: Display Order
@@ -214,7 +215,7 @@ content:
             label: Schedule Image
             type: image
             required: true
-            description: "Upload or select the current schedule image."
+            description: "Upload or select the current schedule image. Max file size: 5 MB."
 
           - name: location
             label: Studio Location
@@ -265,7 +266,7 @@ content:
         label: Calendar Image
         type: image
         required: true
-        description: "Upload the current studio-year calendar image."
+        description: "Upload the current studio-year calendar image. Max file size: 5 MB."
 
       - name: image_alt
         label: Calendar Image Alt Text
@@ -344,7 +345,7 @@ content:
       - name: image
         label: Main Image
         type: image
-        description: "Optional picture for this page."
+        description: "Optional picture for this page. Max file size: 5 MB."
 
       - name: section
         label: Page Group
@@ -490,6 +491,11 @@ content:
             label: Badge - Small Text
             type: string
 
+          - name: poster
+            label: Banner Still Image
+            type: image
+            description: "Picture shown while the banner video loads, and on devices that don't play it. Max file size: 5 MB."
+
       - name: intro
         label: Welcome Section
         type: object
@@ -538,6 +544,7 @@ content:
           - name: image
             label: Card Image
             type: image
+            description: "Max file size: 5 MB."
             required: true
           - name: image_alt
             label: Image Description (for accessibility)
@@ -567,6 +574,7 @@ content:
           - name: image
             label: Tile Image
             type: image
+            description: "Max file size: 5 MB."
             required: true
           - name: href
             label: Page Link
@@ -666,3 +674,76 @@ content:
               - name: headline
                 label: Headline
                 type: string
+
+      - name: story_images
+        label: Photo Strip (under Welcome Section)
+        type: object
+        list:
+          min: 3
+          max: 3
+          collapsible:
+            collapsed: true
+            summary: "{alt}"
+        description: "Three photos. The first one is displayed larger."
+        fields:
+          - name: image
+            label: Photo
+            type: image
+            description: "Max file size: 5 MB."
+            required: true
+          - name: alt
+            label: Photo Description (for accessibility)
+            type: string
+            required: true
+            description: "Briefly describe the photo. Example: AIM dancers performing together"
+
+      - name: experience_photos
+        label: "AIM Experience Photos"
+        type: object
+        list:
+          min: 3
+          max: 3
+          collapsible:
+            collapsed: true
+            summary: "{alt}"
+        description: "Three photos in the AIM Experience section."
+        fields:
+          - name: image
+            label: Photo
+            type: image
+            description: "Max file size: 5 MB."
+            required: true
+          - name: alt
+            label: Photo Description (for accessibility)
+            type: string
+            required: true
+
+      - name: events_photo
+        label: Upcoming Events Photo
+        type: object
+        fields:
+          - name: image
+            label: Photo
+            type: image
+            description: "Max file size: 5 MB."
+            required: true
+          - name: alt
+            label: Photo Description (for accessibility)
+            type: string
+            required: true
+
+      - name: studio_photos
+        label: Studio Photos (Find Your Studio)
+        type: object
+        fields:
+          - name: melville
+            label: Melville Studio Photo
+            type: image
+            description: "Max file size: 5 MB."
+            required: true
+          - name: commack
+            label: Commack Studio Photo
+            type: image
+            description: "Max file size: 5 MB."
+            required: true
+

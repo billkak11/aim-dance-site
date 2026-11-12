@@ -55,7 +55,7 @@ const programs = home.programs.map((program, i) => ({
       loop
       playsinline
       preload="metadata"
-      poster="/uploads/home/hero.jpg"
+      poster={home.hero.poster}
       aria-hidden="true"
     >
 
@@ -155,41 +155,15 @@ const programs = home.programs.map((program, i) => ({
 
     <div class="home-image-story-grid">
 
-
-      <figure class="story-wide">
-
-        <img
-          src="/uploads/drive/home/train-1.jpg"
-          alt="AIM dancers performing together"
-          loading="lazy"
-        />
-
-      </figure>
-
-
-
-      <figure>
-
-        <img
-          src="/uploads/drive/home/train-2.jpg"
-          alt="AIM dancer performing on stage"
-          loading="lazy"
-        />
-
-      </figure>
-
-
-
-      <figure>
-
-        <img
-          src="/uploads/drive/home/train-3.jpg"
-          alt="AIM dancers performing on stage"
-          loading="lazy"
-        />
-
-      </figure>
-
+      {home.story_images.map((img, i) => (
+        <figure class={i === 0 ? 'story-wide' : undefined}>
+          <img
+            src={img.image}
+            alt={img.alt}
+            loading="lazy"
+          />
+        </figure>
+      ))}
 
     </div>
 
@@ -557,41 +531,15 @@ const programs = home.programs.map((program, i) => ({
 
       <div class="photo-mosaic">
 
-
-        <figure>
-
-          <img
-            src="/uploads/drive/home/connection-1.jpg"
-            alt="AIM dancer performing with confidence"
-            loading="lazy"
-          />
-
-        </figure>
-
-
-
-        <figure>
-
-          <img
-            src="/uploads/drive/home/connection-2.jpg"
-            alt="AIM dancer on stage"
-            loading="lazy"
-          />
-
-        </figure>
-
-
-
-        <figure>
-
-          <img
-            src="/uploads/drive/home/connection-3.jpg"
-            alt="AIM dancer demonstrating technique"
-            loading="lazy"
-          />
-
-        </figure>
-
+        {home.experience_photos.map((img) => (
+          <figure>
+            <img
+              src={img.image}
+              alt={img.alt}
+              loading="lazy"
+            />
+          </figure>
+        ))}
 
       </div>
 
@@ -664,8 +612,8 @@ const programs = home.programs.map((program, i) => ({
 
 
         <img
-          src="/uploads/client/general/general-11.jpg"
-          alt="AIM dancers performing"
+          src={home.events_photo.image}
+          alt={home.events_photo.alt}
           loading="lazy"
         />
 
@@ -975,10 +923,7 @@ const programs = home.programs.map((program, i) => ({
 
             <img
               class="location-bg"
-              src={i===0
-                ? '/uploads/home/studio-1.jpg'
-                : '/uploads/home/studio-2.jpg'
-              }
+              src={home.studio_photos[l.name.toLowerCase()]}
               alt={`${l.name} AIM Dance studio`}
               loading="lazy"
             />
