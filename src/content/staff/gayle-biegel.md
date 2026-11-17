@@ -1,7 +1,7 @@
 ---
 name: Gayle Biegel
 role: Dance Teacher
-photo: https://aimdanceny.com/wp-content/uploads/2019/12/Gayle-Headshot2.jpg
+photo: https://aimdanceny.com/uploads/staff/uploads/staff/gayle-biegel.jpg
 order: 10
 ---
 
